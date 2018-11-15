@@ -6,12 +6,13 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.widget.SeekBar
 import com.example.app.drawtest.R
-import kotlinx.android.synthetic.main.thick_dialog.*
+import kotlinx.android.synthetic.main.eraser_thick_dialog.*
 
-class ThickDialog(context: Context,progress : Float, onConfirmCallBack: (Float) -> Unit) : Dialog(context){
+
+class EraserThickDialog(context: Context, progress : Float, onConfirmCallBack: (Float) -> Unit) : Dialog(context){
     init {
         var thick = progress
-        this.setContentView(R.layout.thick_dialog)
+        this.setContentView(R.layout.eraser_thick_dialog)
         this.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         this.setCanceledOnTouchOutside(false)
         thick_tv.text = progress.toInt().toString()

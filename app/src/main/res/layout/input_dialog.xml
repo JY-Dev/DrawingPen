@@ -3,23 +3,37 @@
     android:layout_width="300dp"
     android:layout_height="200dp"
     android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/roundsquaregray">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="파일명을 입력해주세요."
+        android:text="파일저장"
         android:textSize="16dp"
+        android:layout_marginBottom="10dp"
+        android:textStyle="bold"
+        android:textColor="#000"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="파일경로는 DrawingImg폴더입니다."
+        android:textSize="13dp"
+        android:textColor="#000"
         android:layout_marginBottom="10dp"/>
 
     <EditText
         android:id="@+id/input_dialog_et"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="파일명"
+        android:hint="파일명을 입력해주세요."
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:paddingStart="10dp"
+        android:backgroundTint="#202020"
+        android:textColor="#202020"
+        android:textColorHint="#202020"
         android:layout_marginBottom="10dp"/>
 
     <LinearLayout

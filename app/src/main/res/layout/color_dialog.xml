@@ -104,6 +104,8 @@
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="15dp"
                             android:max="255"
+                            android:thumbTint="#ff0000"
+                            android:progressTint="#ff0000"
                             android:progressBackgroundTint="#202020" />
 
                         <TextView
@@ -128,6 +130,8 @@
                             android:layout_width="180dp"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="15dp"
+                            android:thumbTint="#00ff00"
+                            android:progressTint="#00ff00"
                             android:max="255"
                             android:progressBackgroundTint="#202020" />
 
@@ -152,6 +156,8 @@
                             android:id="@+id/color_blue_seek"
                             android:layout_width="180dp"
                             android:layout_height="wrap_content"
+                            android:thumbTint="#0000ff"
+                            android:progressTint="#0000ff"
                             android:layout_marginBottom="15dp"
                             android:max="255"
                             android:progressBackgroundTint="#202020" />

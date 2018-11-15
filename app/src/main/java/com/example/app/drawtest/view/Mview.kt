@@ -12,8 +12,10 @@ import android.view.View
 class MView(context: Context) : View(context) {
     var point = mutableListOf<Point>()
     var thick: Float = 10f
+    var eraserThick: Float = 10f
     var paint = Paint() // 화면에 그려줄 도구를 셋팅하는 객체
     var color = "#000000"
+    var tool = "pen"
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
 
@@ -34,12 +36,14 @@ class MView(context: Context) : View(context) {
 
         when (event?.action) {
             MotionEvent.ACTION_DOWN -> {
-                point.add(Point(event.x, event.y, false, thick, color))
+                if (tool == "pen") point.add(Point(event.x, event.y, false, thick, color))
+                else point.add(Point(event.x, event.y, false, eraserThick,"#ffffff"))
                 postInvalidate()
                 return true
             }
             MotionEvent.ACTION_MOVE -> {
-                point.add(Point(event.x, event.y, true, thick, color))
+                if (tool == "pen") point.add(Point(event.x, event.y, true, thick, color))
+                else point.add(Point(event.x, event.y, true, eraserThick,"#ffffff"))
                 postInvalidate()
                 return true
             }
