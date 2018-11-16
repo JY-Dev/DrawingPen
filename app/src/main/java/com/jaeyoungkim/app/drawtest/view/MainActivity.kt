@@ -1,8 +1,10 @@
 package com.jaeyoungkim.app.drawtest.view
 
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.Paint
+import android.net.Uri
 import android.os.Bundle
 import android.os.Environment.getExternalStorageDirectory
 import android.support.v4.app.ActivityCompat
@@ -111,7 +113,13 @@ class MainActivity : AppCompatActivity() {
                     if (!folder.exists()) folder.mkdirs()
                     if (!file.exists()) {
                         fos = FileOutputStream(getExternalStorageDirectory().toString() + "/DrawingImg/$it.png")
-                        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos)
+                        bitmap.compress(Bitmap.CompressFormat.PNG, 100, fos)
+                        sendBroadcast(
+                            Intent(
+                                Intent.ACTION_MEDIA_SCANNER_SCAN_FILE,
+                                Uri.parse("file://" + getExternalStorageDirectory().toString() + "/DrawingImg/$it.png")
+                            )
+                        )
                         mview.destroyDrawingCache()
                         Toast.makeText(this, "파일이 저장되었습니다.", Toast.LENGTH_SHORT).show()
                     } else Toast.makeText(this, "같은이름의 파일이 이미존재합니다.", Toast.LENGTH_SHORT).show()
