@@ -1,10 +1,11 @@
-package com.example.app.drawtest.view
+package com.jaeyoungkim.app.drawtest.view
 
 import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Color.WHITE
 import android.graphics.Paint
+import android.graphics.Path
 import android.view.MotionEvent
 import android.view.View
 
@@ -16,17 +17,25 @@ class MView(context: Context) : View(context) {
     var paint = Paint() // 화면에 그려줄 도구를 셋팅하는 객체
     var color = "#000000"
     var tool = "pen"
+    val path = Path()
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
 
         setBackgroundColor(WHITE) // 배경색을 지정
+        paint.strokeCap = Paint.Cap.ROUND
 
         point.forEachIndexed { i, afterPoint ->
             if (afterPoint.move) {
                 paint.strokeWidth = afterPoint.thick
                 paint.color = Color.parseColor(afterPoint.color)
-                val beforePoint = point[i - 1]
-                canvas?.drawLine(beforePoint.x, beforePoint.y, afterPoint.x, afterPoint.y, paint)
+                val beforePoint1 = point[i - 1]
+                if (i<1) {
+                    val beforePoint2 = point[i - 2]
+                    path.cubicTo(beforePoint2.x,beforePoint2.y,beforePoint1.x,beforePoint1.y,afterPoint.x,afterPoint.y)
+                    canvas?.drawPath(path, paint)
+                }
+                else canvas?.drawLine(beforePoint1.x, beforePoint1.y, afterPoint.x, afterPoint.y, paint)
+
             }
         }
 

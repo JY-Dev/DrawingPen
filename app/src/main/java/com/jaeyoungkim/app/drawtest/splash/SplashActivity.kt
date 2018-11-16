@@ -1,11 +1,11 @@
-package com.example.app.drawtest.splash
+package com.jaeyoungkim.app.drawtest.splash
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import com.example.app.drawtest.R
-import com.example.app.drawtest.view.MainActivity
+import com.jaeyoungkim.app.drawtest.R
+import com.jaeyoungkim.app.drawtest.view.MainActivity
 
 class SplashActivity : AppCompatActivity() {
 

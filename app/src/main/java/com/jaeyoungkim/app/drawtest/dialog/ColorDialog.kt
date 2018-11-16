@@ -1,4 +1,4 @@
-package com.example.app.drawtest.dialog
+package com.jaeyoungkim.app.drawtest.dialog
 
 import android.app.Dialog
 import android.content.Context
@@ -9,7 +9,7 @@ import android.graphics.drawable.Drawable
 import android.support.v4.content.ContextCompat
 import android.widget.SeekBar
 import android.widget.TextView
-import com.example.app.drawtest.R
+import com.jaeyoungkim.app.drawtest.R
 import kotlinx.android.synthetic.main.color_dialog.*
 
 class ColorDialog(context: Context, onConfirmCallBack: (Int, Int, Int, String) -> Unit, red: Int, green: Int, blue: Int) :

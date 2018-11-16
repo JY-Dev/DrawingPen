@@ -1,4 +1,4 @@
-package com.example.app.drawtest.view
+package com.jaeyoungkim.app.drawtest.view
 
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
@@ -9,11 +9,11 @@ import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
-import com.example.app.drawtest.dialog.ColorDialog
-import com.example.app.drawtest.dialog.InputDialog
-import com.example.app.drawtest.R
-import com.example.app.drawtest.dialog.EraserThickDialog
-import com.example.app.drawtest.dialog.ThickDialog
+import com.jaeyoungkim.app.drawtest.dialog.ColorDialog
+import com.jaeyoungkim.app.drawtest.dialog.InputDialog
+import com.jaeyoungkim.app.drawtest.R
+import com.jaeyoungkim.app.drawtest.dialog.EraserThickDialog
+import com.jaeyoungkim.app.drawtest.dialog.ThickDialog
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.File
 import java.io.FileNotFoundException
@@ -106,11 +106,11 @@ class MainActivity : AppCompatActivity() {
                 bitmap = mview.drawingCache
                 folder = File(getExternalStorageDirectory().toString() + File.separator + "DrawingImg")
                 file =
-                        File(getExternalStorageDirectory().toString() + File.separator + "/DrawingImg/$it.jpeg")
+                        File(getExternalStorageDirectory().toString() + File.separator + "/DrawingImg/$it.png")
                 try {
                     if (!folder.exists()) folder.mkdirs()
                     if (!file.exists()) {
-                        fos = FileOutputStream(getExternalStorageDirectory().toString() + "/DrawingImg/$it.jpeg")
+                        fos = FileOutputStream(getExternalStorageDirectory().toString() + "/DrawingImg/$it.png")
                         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos)
                         mview.destroyDrawingCache()
                         Toast.makeText(this, "파일이 저장되었습니다.", Toast.LENGTH_SHORT).show()
@@ -120,6 +120,10 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
+        }
+
+        more_btn.setOnClickListener {
+            Toast.makeText(this, "서비스 준비중 입니다.", Toast.LENGTH_SHORT).show()
         }
 
         // 그리기

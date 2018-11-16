@@ -1,11 +1,11 @@
-package com.example.app.drawtest.dialog
+package com.jaeyoungkim.app.drawtest.dialog
 
 import android.app.Dialog
 import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.view.Window
-import com.example.app.drawtest.R
+import com.jaeyoungkim.app.drawtest.R
 import kotlinx.android.synthetic.main.input_dialog.*
 
 class InputDialog(context: Context, onConfirmCallBack : (String) -> Unit ) : Dialog(context){

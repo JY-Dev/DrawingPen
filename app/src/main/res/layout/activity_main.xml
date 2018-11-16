@@ -21,12 +21,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginEnd="30dp"
+            android:layout_marginEnd="20dp"
             android:gravity="center">
 
             <Button
                 android:id="@+id/clear_btn"
-                android:layout_width="25dp"
+                android:layout_width="20dp"
                 android:layout_height="25dp"
                 android:background="@drawable/copy" />
 
@@ -44,7 +44,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="30dp"
+            android:layout_marginEnd="20dp"
             android:orientation="vertical"
             android:gravity="center">
 
@@ -60,14 +60,14 @@
                 android:layout_marginTop="5dp"
                 android:textSize="12dp"
                 android:textStyle="bold"
-                android:text="선 두께"/>
+                android:text="선"/>
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="30dp"
+            android:layout_marginEnd="20dp"
             android:orientation="vertical"
             android:gravity="center">
         <Button
@@ -88,7 +88,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="30dp"
+            android:layout_marginEnd="20dp"
             android:orientation="vertical"
             android:gravity="center">
 
@@ -114,12 +114,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:layout_marginEnd="20dp"
             android:gravity="center">
-        <Button
-            android:id="@+id/capture_btn"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:background="@drawable/save" />
+
+            <Button
+                android:id="@+id/capture_btn"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/save" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -130,12 +132,56 @@
                 android:text="파일 저장"/>
 
         </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/more_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="∙ ∙ ∙"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                android:text="더보기"/>
+
+        </LinearLayout>
+
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/view"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical" />
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:background="#000">
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+
+
 
 </LinearLayout>
