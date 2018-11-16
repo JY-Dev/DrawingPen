@@ -16,6 +16,6 @@ class SplashActivity : AppCompatActivity() {
         Handler().postDelayed({
             startActivity(Intent(this@SplashActivity,MainActivity::class.java))
             finish()
-        },3000)
+        },1000)
     }
 }
