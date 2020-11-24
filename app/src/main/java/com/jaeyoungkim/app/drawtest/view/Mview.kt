@@ -47,18 +47,18 @@ class MView(context: Context) : View(context) {
             MotionEvent.ACTION_DOWN -> {
                 if (tool == "pen") point.add(Point(event.x, event.y, false, thick, color))
                 else point.add(Point(event.x, event.y, false, eraserThick,"#ffffff"))
-                postInvalidate()
+                invalidate()
                 return true
             }
             MotionEvent.ACTION_MOVE -> {
                 if (tool == "pen") point.add(Point(event.x, event.y, true, thick, color))
                 else point.add(Point(event.x, event.y, true, eraserThick,"#ffffff"))
-                postInvalidate()
+                invalidate()
                 return true
             }
 
         }
-        postInvalidate()
+        invalidate()
         return true
     }
 

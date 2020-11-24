@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
         // 새그림
         clear_btn.setOnClickListener {
             mview.point.clear()
-            mview.postInvalidate()
+            mview.invalidate()
         }
 
         // 선두께
@@ -75,7 +75,7 @@ class MainActivity : AppCompatActivity() {
                 mview.paint.strokeWidth = thick
                 mview.thick = thick
                 this.thick = thick
-                mview.postInvalidate()
+                mview.invalidate()
             }
         }
 
@@ -86,7 +86,7 @@ class MainActivity : AppCompatActivity() {
                 this.green = green
                 this.blue = blue
                 mview.color = colorCode
-                mview.postInvalidate()
+                mview.invalidate()
             }, red, green, blue)
         }
 
@@ -98,7 +98,7 @@ class MainActivity : AppCompatActivity() {
                 mview.eraserThick = eraserThick
             } else mview.tool = "pen"
 
-            mview.postInvalidate()
+            mview.invalidate()
         }
 
         // 저장

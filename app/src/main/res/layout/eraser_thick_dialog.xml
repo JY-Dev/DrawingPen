@@ -39,7 +39,7 @@
         android:thumbTint="#202020"
         android:progressBackgroundTint="#202020"
         android:progressTint="#000"
-        android:max="20"/>
+        android:max="50"/>
 
     <Button
         android:id="@+id/thick_confirm_btn"
