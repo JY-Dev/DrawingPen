@@ -8,6 +8,9 @@
 - 펜 두께 선택가능
 - 지우개 두께 선택가능
 
+## 구현
+- Canvas를 이용해 MotionEvent로 Motion UP Motion Down Event를 감지해 선을 그림
+
 ## Application
 <div>
 <img width="200" src="https://user-images.githubusercontent.com/45057493/102852060-b807cc00-4460-11eb-87bb-18a363e6120f.jpg">
